@@ -1,0 +1,23 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "hans on for creation of rest api",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdtanveeralamgir/RESt_API.git"
+  },
+  "author": "Opel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mdtanveeralamgir/RESt_API/issues"
+  },
+  "homepage": "https://github.com/mdtanveeralamgir/RESt_API#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "joi": "^17.2.1"
+  }
+}
