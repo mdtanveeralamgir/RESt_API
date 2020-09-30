@@ -29,6 +29,30 @@ app.get("/api/customers/:id", (req, res) => {
   if (!customers) res.status(404).send("<h2> No customer found</h2>");
   res.send(customer);
 });
+
+//Create request handler
+//Create new customer information
+app.post("/api/customers", (req, res) => {
+  const { error } = validateCustomer(req.body);
+  if (error) {
+    res.status(400).send(error.details[0].message);
+    return;
+  }
+  const customer = {
+    id: customers.length + 1,
+    title: req.body.title,
+  };
+  customers.push(customer);
+  res.send(customer);
+});
+
+//Validate customer information
+function validateCustomer(customer) {
+  const schema = {
+    title: joi.string().min(3).required(),
+  };
+  return joi.validate(customer, schema);
+}
 //Port environment variables
 const port = process.env.PORT || 8080;
 app.listen(port, () => console.log("Listening on port ${port}..."));
